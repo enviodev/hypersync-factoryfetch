@@ -10,7 +10,7 @@ async def collect_events():
         from_block=0,
         # Select the logs we want
         logs=[LogSelection(
-            address=["0x1F98431c8aD98523631AE4a59f267346ea31F984"], # uniswap factory
+            address=["0x1F98431c8aD98523631AE4a59f267346ea31F984", "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865", "0xbaceb8ec6b9355dfc0269c18bac9d6e2bdc29c4f"], # uniswap factory
             topics=[["0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118"]],
         )],
         # Select the fields and tables we want
