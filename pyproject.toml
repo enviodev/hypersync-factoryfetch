@@ -1,0 +1,33 @@
+[project]
+name = "factory-address-fetcher"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "moose-code", email = "jonjonclark@gmail.com" }
+]
+dependencies = [
+    "hypersync>=0.4.0",
+    "asyncio>=3.4.3",
+    "polars>=0.20.16",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "factory_address_fetcher:hello"
+formatter = "factory_address_fetcher:formatter"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/factory_address_fetcher"]
