@@ -9,4 +9,4 @@ wheels/
 # venv
 .venv
 
-data
+data*
