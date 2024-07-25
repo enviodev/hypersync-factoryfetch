@@ -4,14 +4,15 @@ import asyncio
 
 async def collect_events():
     # choose network
-    client = hypersync.HypersyncClient("https://polygon.hypersync.xyz")
+    client = hypersync.HypersyncClient("https://gnosis.hypersync.xyz")
 
     query = hypersync.Query(
         from_block=0,
         # Select the logs we want
         logs=[LogSelection(
-            address=["0x1F98431c8aD98523631AE4a59f267346ea31F984"], # uniswap factory
-            topics=[["0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118"]],
+            # address=["0x9a47d4aE8f7C2075c2a953d9061aea14E23863E8", "0xE9f67C79700137Fe053276F0654423a19a302c69","0x97c599819C95Aaf1BBC9063f4c743cCfCE7bc591", "0x450Fc3eAc8b847a759Cb05790cE7A1f465ac0cE8","0x3D529c760F3EC4c89Bdd6549DDabE9097C1da6e9"], # cometh relayer
+            address=["0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2"], 
+            topics=[["0x4f51faf6c4561ff95f067657e43439f0f856d97c04d9ec9070a6199ad418e235"]], # hub signup
         )], 
         # Select the fields and tables we want
         field_selection=FieldSelection(
@@ -45,7 +46,7 @@ async def collect_events():
         #     },
         # ),
         # give event signature so client can decode logs into decoded_logs.parquet file
-        event_signature="PoolCreated(address indexed token0, address indexed token1, uint24 indexed fee, int24 tickSpacing, address pool)",
+        event_signature="ProxyCreation(address proxy, address singleton)",
     )
 
     await client.create_parquet_folder(query, config)

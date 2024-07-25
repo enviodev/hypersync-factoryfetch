@@ -2,14 +2,8 @@
 name = "factory-address-fetcher"
 version = "0.1.0"
 description = "Add your description here"
-authors = [
-    { name = "moose-code", email = "jonjonclark@gmail.com" }
-]
-dependencies = [
-    "hypersync>=0.4.0",
-    "asyncio>=3.4.3",
-    "polars>=0.20.16",
-]
+authors = [{ name = "moose-code", email = "jonjonclark@gmail.com" }]
+dependencies = ["hypersync>=0.4.0", "asyncio>=3.4.3", "polars>=0.20.16"]
 readme = "README.md"
 requires-python = ">= 3.8"
 
