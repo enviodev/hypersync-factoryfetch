@@ -6,9 +6,15 @@
 #   features: []
 #   all-features: false
 #   with-sources: false
+#   generate-hashes: false
+#   universal: false
 
 -e file:.
 asyncio==3.4.3
+    # via factory-address-fetcher
 hypersync==0.5.6
+    # via factory-address-fetcher
 polars==0.20.16
+    # via factory-address-fetcher
 strenum==0.4.15
+    # via hypersync
